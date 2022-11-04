@@ -1,0 +1,298 @@
+:root {
+	--verde: #69B02A;
+   	--preto: #1e1e1e;
+   	--cinza: #878787;
+   	--titulo: 5vw;
+   	--titulo-r: 3.2rem;
+   	--paragrafo: 1.6rem;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Muli', sans-serif;
+	font-weight: 400;
+	font-size: var(--paragrafo);
+	color: var(--cinza);
+}
+
+/*-- Layout --*/
+
+.container {
+	max-width: 110rem;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+@media (min-width: 992px) {
+	.container {
+		padding: 0;
+	}
+}
+
+.seccion {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
+/*-- Utilidades --*/
+
+.texto-central {
+	text-align: center;
+}
+
+.clearfix {
+  	overflow: auto;
+}
+
+.clearfix::after {
+  	content: "";
+  	clear: both;
+  	display: table;
+}
+
+/*-- Textos --*/
+
+a {
+	font-family: 'Muli', sans-serif;
+	font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: var(--titulo-r);
+	color: #fff;
+	background-color: var(--verde);
+	padding: 1rem 2rem;
+	text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+	h1 {
+		font-size:var(--titulo);
+	}
+}
+
+h2 {
+	font-size: 3.2rem;
+	text-transform: uppercase;
+	color: var(--verde)
+}
+
+h2:after {
+	content: "";
+	display: block;
+	width: 2rem;
+	height: 5px;
+	background-color: var(--verde);
+	margin: 0 auto;
+	margin-top: 1rem;
+} 
+
+img {
+	max-width: 100%;
+}
+
+/*-- Viewport Units --*/
+
+.header {
+	background-image: url(images/hero.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	height: 100vh;
+	min-height: 60rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*-- Colunas --*/
+
+.paragrafo-principal {
+	text-align: justify;
+	column-count: none;
+}
+
+.paragrafo-principal::first-letter {
+    background-color: #f1f1f1;
+    color: var(--verde);
+    font-size: 4rem;
+    float: left;
+    margin: 0 8px 0 0;
+    padding: 0 0.5rem 0 0.5rem;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+	.paragrafo-principal {
+		text-align: justify;
+		column-count: 2;
+		column-gap: 3rem;
+		column-rule: 2px inset #87878750;
+	}
+}
+
+@media (min-width: 992px) {
+	.paragrafo-principal {
+		text-align: justify;
+		column-count: 3;
+	}
+}
+
+/*-- CSS Shapes --*/
+
+h3 {
+	font-size: 4rem;
+	margin-bottom: 2rem;
+}
+
+.css-shapes p {
+	text-align: justify;	
+}
+
+.css-shapes .images-shapes {
+	shape-outside: unset;
+}
+
+@media (min-width: 768px) {
+	.css-shapes .images-shapes {
+		max-width: 35rem;
+		shape-margin: 1rem;
+		background-color: var(--gris);
+	}
+
+	.css-shapes .images-shapes.esq {
+		float: left;
+		clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+		shape-outside: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%) border-box;
+		margin-right: 1rem;
+	}
+
+	.css-shapes .images-shapes.dir {
+		float: right;
+		clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+		shape-outside: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%) border-box;
+		margin-left: 1rem;
+	}
+
+	.css-shapes .images-shapes img {
+		display: block;
+		mix-blend-mode: hard-light;
+	}
+}
+
+/*-- Object Fit --*/
+
+.object-f {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+    margin-bottom: 0;
+}
+
+.object-f .bloco1 {
+    width: 100%;
+    height: 50vh;
+}
+
+.object-f .bloco2 {
+    width: 100%;
+    height: 50vh;
+}
+
+.object-f .bloco3 {
+    width: 100%;
+    height: 50vh;
+}
+
+.object-f .bloco4 {
+    width: 100%;
+    height: 50vh;
+}
+
+.object-f .titulo {
+  	position: absolute;
+  	top: 0;
+  	bottom: 0;
+  	left: 0;
+  	right: 0;
+  	display: flex;
+  	align-items: flex-end;
+  	justify-content: center;
+  	text-align: center;
+  	padding: 1rem;
+  	color: #000000;
+}
+
+@media (min-width: 576px) {
+	.object-f {
+		flex-direction: row;
+		justify-content: space-between;
+        padding-top: 80px;
+	}
+
+	.object-f  .bloco1 {
+	  	height: 100vh;
+	  	width: 50%;
+	}
+
+	.object-f  .bloco1 img {
+	  	height: 100%;
+	  	width: 100%;
+	  	object-fit: cover;
+	  	object-position: center top;
+	}
+
+	.object-f  .bloco2 {
+	  	height: 100vh;
+	  	width: 50%;
+	}
+
+	.object-f  .bloco2 img {
+	  	height: 100%;
+	  	width: 100%;
+	  	object-fit: cover;
+	  	object-position: center top;
+	}
+
+	.object-f  .bloco3 {
+	  	height: 100vh;
+	  	width: 50%;
+	}
+
+	.object-f  .bloco3 img {
+	  	height: 100%;
+	  	width: 100%;
+	  	object-fit: cover;
+	  	object-position: center top;
+	}
+
+	.object-f  .bloco4 {
+	  	height: 100vh;
+	  	width: 50%;
+	}
+
+	.object-f  .bloco4 img {
+	  	height: 100%;
+	  	width: 100%;
+	  	object-fit: cover;
+	  	object-position: center top;
+	}
+	
+}
